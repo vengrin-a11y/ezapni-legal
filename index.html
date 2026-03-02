@@ -1,37 +1,226 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>eZapni – Právne informácie</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>eZapni — Právne dokumenty</title>
+  <meta name="description" content="Právne dokumenty pre aplikáciu eZapni: Zásady ochrany osobných údajov, Podmienky používania, Kontakt." />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <div class="container">
-    <h1>eZapni</h1>
-    <p class="subtitle">
-      Oficiálne právne informácie aplikácie eZapni.
-    </p>
+    <div class="header">
+      <div class="brand">
+        <div class="logo">eZ</div>
+        <div>
+          <h1>eZapni</h1>
+          <p>Právne dokumenty • Legal</p>
+        </div>
+      </div>
 
-    <div class="language-block">
-      <h2>Slovenská verzia</h2>
-      <ul>
-        <li><a href="privacy-sk.html">Ochrana osobných údajov</a></li>
-        <li><a href="terms-sk.html">Podmienky používania</a></li>
-      </ul>
+      <div class="lang" role="navigation" aria-label="Language switch">
+        <button class="pill" aria-current="true" data-lang="sk">SK</button>
+        <button class="pill" aria-current="false" data-lang="cs">CZ</button>
+        <button class="pill" aria-current="false" data-lang="en">EN</button>
+      </div>
     </div>
 
-    <div class="language-block">
-      <h2>Česká verze</h2>
-      <ul>
-        <li><a href="privacy-cz.html">Ochrana osobních údajů</a></li>
-        <li><a href="terms-cz.html">Podmínky používání</a></li>
-      </ul>
+    <section class="hero" id="hero">
+      <h2>Dokumenty a odkazy</h2>
+      <p>Tu nájdeš podmienky používania, zásady ochrany osobných údajov a kontakt. Odkazy vlož do aplikácie (Nastavenia → Právne).</p>
+      <div class="notice" id="note">
+        Tip: V Google Play Console budeš potrebovať minimálne link na Privacy Policy.
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <header>
+          <h3 id="privacyTitle">Zásady ochrany osobných údajov</h3>
+          <span class="badge" id="privacyBadge">Privacy Policy</span>
+        </header>
+        <div class="content">
+          <p id="privacyDesc">Ako spracúvame údaje, analytiku a technické informácie.</p>
+          <div class="actions">
+            <a class="btn primary" href="./privacy.html" id="privacyBtn">Otvoriť</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <header>
+          <h3 id="termsTitle">Podmienky používania</h3>
+          <span class="badge" id="termsBadge">Terms</span>
+        </header>
+        <div class="content">
+          <p id="termsDesc">Pravidlá používania aplikácie a obmedzenie zodpovednosti.</p>
+          <div class="actions">
+            <a class="btn primary" href="./terms.html" id="termsBtn">Otvoriť</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <header>
+          <h3 id="contactTitle">Kontakt</h3>
+          <span class="badge" id="contactBadge">Support</span>
+        </header>
+        <div class="content">
+          <p id="contactDesc">Pre podporu a otázky k účtu či platbám.</p>
+          <div class="kv">
+            <div class="k" id="contactEmailK">E-mail</div>
+            <div class="v"><a href="mailto:support@ezapni.app">support@ezapni.app</a></div>
+
+            <div class="k" id="contactAppK">Aplikácia</div>
+            <div class="v">eZapni</div>
+          </div>
+
+          <div class="notice small" id="contactHint">
+            Ak ešte nemáš doménu/e-mail, dočasne môže byť aj tvoj existujúci support e-mail.
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <header>
+          <h3 id="linksTitle">Odkazy do aplikácie</h3>
+          <span class="badge" id="linksBadge">In-app links</span>
+        </header>
+        <div class="content">
+          <p id="linksDesc">Tieto URL vlož do Nastavení v aplikácii (Právne).</p>
+          <div class="kv">
+            <div class="k">Privacy</div>
+            <div class="v"><code id="privacyUrl"></code></div>
+
+            <div class="k">Terms</div>
+            <div class="v"><code id="termsUrl"></code></div>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <footer>
-      © 2026 eZapni. Všetky práva vyhradené.
-    </footer>
+    <div class="footer">
+      <div>© <span id="year"></span> eZapni</div>
+      <div class="small">
+        <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a>
+      </div>
+    </div>
   </div>
+
+  <script>
+    // Fill year + absolute URLs (works on GitHub Pages)
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const abs = (path) => new URL(path, window.location.href).toString();
+    document.getElementById("privacyUrl").textContent = abs("./privacy.html");
+    document.getElementById("termsUrl").textContent = abs("./terms.html");
+
+    // Simple i18n switch (content only on index)
+    const strings = {
+      sk: {
+        heroTitle: "Dokumenty a odkazy",
+        heroDesc: "Tu nájdeš podmienky používania, zásady ochrany osobných údajov a kontakt. Odkazy vlož do aplikácie (Nastavenia → Právne).",
+        note: "Tip: V Google Play Console budeš potrebovať minimálne link na Privacy Policy.",
+        privacyTitle: "Zásady ochrany osobných údajov",
+        privacyDesc: "Ako spracúvame údaje, analytiku a technické informácie.",
+        privacyBtn: "Otvoriť",
+        termsTitle: "Podmienky používania",
+        termsDesc: "Pravidlá používania aplikácie a obmedzenie zodpovednosti.",
+        termsBtn: "Otvoriť",
+        contactTitle: "Kontakt",
+        contactDesc: "Pre podporu a otázky k účtu či platbám.",
+        contactEmailK: "E-mail",
+        contactAppK: "Aplikácia",
+        contactHint: "Ak ešte nemáš doménu/e-mail, dočasne môže byť aj tvoj existujúci support e-mail.",
+        linksTitle: "Odkazy do aplikácie",
+        linksDesc: "Tieto URL vlož do Nastavení v aplikácii (Právne).",
+      },
+      cs: {
+        heroTitle: "Dokumenty a odkazy",
+        heroDesc: "Zde najdeš podmínky používání, zásady ochrany osobních údajů a kontakt. Odkazy vlož do aplikace (Nastavení → Právní).",
+        note: "Tip: V Google Play Console budeš potřebovat minimálně odkaz na Privacy Policy.",
+        privacyTitle: "Zásady ochrany osobních údajů",
+        privacyDesc: "Jak zpracováváme údaje, analytiku a technické informace.",
+        privacyBtn: "Otevřít",
+        termsTitle: "Podmínky používání",
+        termsDesc: "Pravidla používání aplikace a omezení odpovědnosti.",
+        termsBtn: "Otevřít",
+        contactTitle: "Kontakt",
+        contactDesc: "Pro podporu a dotazy k účtu či platbám.",
+        contactEmailK: "E-mail",
+        contactAppK: "Aplikace",
+        contactHint: "Pokud ještě nemáš doménu/e-mail, dočasně může být i tvůj stávající support e-mail.",
+        linksTitle: "Odkazy do aplikace",
+        linksDesc: "Tato URL vlož do Nastavení v aplikaci (Právní).",
+      },
+      en: {
+        heroTitle: "Documents & links",
+        heroDesc: "Here you’ll find the Terms of Use, Privacy Policy and contact. Add these links in the app (Settings → Legal).",
+        note: "Tip: Google Play Console requires at least a Privacy Policy link.",
+        privacyTitle: "Privacy Policy",
+        privacyDesc: "How we process data, analytics and technical information.",
+        privacyBtn: "Open",
+        termsTitle: "Terms of Use",
+        termsDesc: "Rules for using the app and limitation of liability.",
+        termsBtn: "Open",
+        contactTitle: "Contact",
+        contactDesc: "Support and questions about account or payments.",
+        contactEmailK: "Email",
+        contactAppK: "App",
+        contactHint: "If you don’t have a domain/email yet, you can temporarily use your existing support email.",
+        linksTitle: "In-app links",
+        linksDesc: "Use these URLs in the app (Settings → Legal).",
+      }
+    };
+
+    const els = {
+      heroTitle: document.querySelector("#hero h2"),
+      heroDesc: document.querySelector("#hero p"),
+      note: document.getElementById("note"),
+      privacyTitle: document.getElementById("privacyTitle"),
+      privacyDesc: document.getElementById("privacyDesc"),
+      privacyBtn: document.getElementById("privacyBtn"),
+      termsTitle: document.getElementById("termsTitle"),
+      termsDesc: document.getElementById("termsDesc"),
+      termsBtn: document.getElementById("termsBtn"),
+      contactTitle: document.getElementById("contactTitle"),
+      contactDesc: document.getElementById("contactDesc"),
+      contactEmailK: document.getElementById("contactEmailK"),
+      contactAppK: document.getElementById("contactAppK"),
+      contactHint: document.getElementById("contactHint"),
+      linksTitle: document.getElementById("linksTitle"),
+      linksDesc: document.getElementById("linksDesc"),
+    };
+
+    function setLang(lang){
+      const s = strings[lang] || strings.sk;
+      els.heroTitle.textContent = s.heroTitle;
+      els.heroDesc.textContent = s.heroDesc;
+      els.note.textContent = s.note;
+      els.privacyTitle.textContent = s.privacyTitle;
+      els.privacyDesc.textContent = s.privacyDesc;
+      els.privacyBtn.textContent = s.privacyBtn;
+      els.termsTitle.textContent = s.termsTitle;
+      els.termsDesc.textContent = s.termsDesc;
+      els.termsBtn.textContent = s.termsBtn;
+      els.contactTitle.textContent = s.contactTitle;
+      els.contactDesc.textContent = s.contactDesc;
+      els.contactEmailK.textContent = s.contactEmailK;
+      els.contactAppK.textContent = s.contactAppK;
+      els.contactHint.textContent = s.contactHint;
+      els.linksTitle.textContent = s.linksTitle;
+      els.linksDesc.textContent = s.linksDesc;
+
+      document.querySelectorAll(".pill").forEach(b=>{
+        b.setAttribute("aria-current", b.dataset.lang === lang ? "true" : "false");
+      });
+
+      document.documentElement.lang = lang === "cs" ? "cs" : (lang === "en" ? "en" : "sk");
+    }
+
+    document.querySelectorAll(".pill").forEach(btn=>{
+      btn.addEventListener("click", ()=> setLang(btn.dataset.lang));
+    });
+  </script>
 </body>
 </html>
