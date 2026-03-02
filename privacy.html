@@ -1,1 +1,424 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>eZapni — Zásady ochrany osobných údajov</title>
+  <meta name="description" content="Zásady ochrany osobných údajov pre aplikáciu eZapni." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">
+        <a class="logo" href="./index.html" aria-label="Back to home">eZ</a>
+        <div>
+          <h1 id="pageTitle">Zásady ochrany osobných údajov</h1>
+          <p id="subtitle">Aplikácia eZapni • Posledná aktualizácia: <span id="lastUpdated"></span></p>
+        </div>
+      </div>
 
+      <div class="lang" role="navigation" aria-label="Language switch">
+        <button class="pill" aria-current="true" data-lang="sk">SK</button>
+        <button class="pill" aria-current="false" data-lang="cs">CZ</button>
+        <button class="pill" aria-current="false" data-lang="en">EN</button>
+      </div>
+    </div>
+
+    <section class="hero">
+      <h2 id="heroTitle">Zhrnutie</h2>
+      <p id="heroDesc">
+        Rešpektujeme súkromie. Aplikácia eZapni spracúva len nevyhnutné technické údaje a (voliteľne) anonymizovanú analytiku na zlepšovanie funkcií.
+      </p>
+      <div class="notice" id="heroNote">
+        Ak nechceš analytiku, môžeš ju vypnúť v nastaveniach (ak je dostupné), prípadne používame iba agregované technické dáta.
+      </div>
+    </section>
+
+    <section class="card">
+      <header>
+        <h3 id="c1t">1. Kto je prevádzkovateľ</h3>
+        <span class="badge" id="c1b">Controller</span>
+      </header>
+      <div class="content">
+        <p id="c1p">
+          Prevádzkovateľom osobných údajov v súvislosti s aplikáciou eZapni („Aplikácia“) je prevádzkovateľ uvedený v sekcii Kontakt na stránke
+          <a href="./index.html">eZapni — Legal</a>.
+        </p>
+        <div class="kv">
+          <div class="k" id="c1k1">Kontakt</div>
+          <div class="v"><a href="mailto:support@ezapni.app">support@ezapni.app</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <header>
+        <h3 id="c2t">2. Aké údaje spracúvame</h3>
+        <span class="badge" id="c2b">Data</span>
+      </header>
+      <div class="content" id="c2p">
+        <p><strong id="c2s1">a) Údaje, ktoré zadáš v aplikácii</strong><br/>
+          <span id="c2a">
+            Nastavenia spotrebičov (napr. spotreba v kWh, bežný čas zapnutia), výber trhu (SK/CZ) a podobné preferencie. Tieto údaje slúžia na výpočet odporúčaní a zobrazenie výsledkov.
+          </span>
+        </p>
+        <p><strong id="c2s2">b) Technické a diagnostické údaje</strong><br/>
+          <span id="c2b2">
+            Informácie o zariadení a aplikácii (napr. verzia aplikácie, typ zariadenia, OS, jazyk, časové pásmo, anonymné diagnostické údaje o pádoch).
+          </span>
+        </p>
+        <p><strong id="c2s3">c) Analytické udalosti (event tracking) — ak je zapnuté</strong><br/>
+          <span id="c2c">
+            Môžeme merať anonymné/aggregované udalosti (napr. otvorenie obrazovky, kliknutie na „Zobraziť plán“, pridanie spotrebiča) s cieľom zlepšovať aplikáciu.
+            Nezhromažďujeme obsah tvojich textov ani citlivé osobné údaje na reklamné účely.
+          </span>
+        </p>
+        <p><strong id="c2s4">d) Údaje o platbách</strong><br/>
+          <span id="c2d">
+            Ak odomkneš platenú verziu, platbu spracúva obchod (Google Play / App Store). K údajom o platobnej karte nemáme prístup. Môžeme spracúvať iba technické potvrdenia o nákupe (napr. identifikátor produktu, stav nákupu) na účely odomknutia funkcií.
+          </span>
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <header>
+        <h3 id="c3t">3. Na aké účely a právne základy</h3>
+        <span class="badge" id="c3b">Purpose</span>
+      </header>
+      <div class="content" id="c3p">
+        <p id="c3a">
+          Údaje spracúvame najmä na:
+        </p>
+        <ul id="c3list">
+          <li><strong>Poskytovanie funkcií aplikácie</strong> (výpočty a odporúčania) — plnenie zmluvy / poskytovanie služby.</li>
+          <li><strong>Zlepšovanie stability a výkonu</strong> (diagnostika, pády) — oprávnený záujem.</li>
+          <li><strong>Analytiku používania</strong> (ak je zapnutá) — oprávnený záujem alebo súhlas podľa nastavenia implementácie.</li>
+          <li><strong>Správa nákupov</strong> (odomknutie Pro) — plnenie zmluvy.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <header>
+        <h3 id="c4t">4. Komu údaje poskytujeme</h3>
+        <span class="badge" id="c4b">Sharing</span>
+      </header>
+      <div class="content" id="c4p">
+        <p id="c4a">
+          Údaje môžeme zdieľať iba v nevyhnutnom rozsahu s poskytovateľmi služieb, ktorí nám pomáhajú prevádzkovať aplikáciu, napríklad:
+        </p>
+        <ul id="c4list">
+          <li>poskytovatelia analytiky a crash reportingu (ak sú používaní),</li>
+          <li>cloud/hosting infraštruktúra (ak aplikácia používa backend),</li>
+          <li>Google Play / Apple App Store pre spracovanie nákupov.</li>
+        </ul>
+        <p id="c4b2">
+          Údaje nepredávame a nepoužívame na cielenú reklamu tretích strán.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <header>
+        <h3 id="c5t">5. Prenos do tretích krajín</h3>
+        <span class="badge" id="c5b">Transfers</span>
+      </header>
+      <div class="content" id="c5p">
+        <p id="c5a">
+          Ak využívame poskytovateľov mimo EÚ/EHP, prenosy prebiehajú s primeranými zárukami (napr. štandardné zmluvné doložky).
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <header>
+        <h3 id="c6t">6. Doba uchovávania</h3>
+        <span class="badge" id="c6b">Retention</span>
+      </header>
+      <div class="content" id="c6p">
+        <p id="c6a">
+          Údaje uchovávame len po dobu nevyhnutnú na účely uvedené vyššie. Nastavenia v aplikácii môžu byť uložené lokálne v zariadení.
+          Diagnostické a analytické údaje (ak sú zapnuté) uchovávame typicky v agregovanej podobe a po obmedzenú dobu podľa nastavení poskytovateľa.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <header>
+        <h3 id="c7t">7. Tvoje práva</h3>
+        <span class="badge" id="c7b">Rights</span>
+      </header>
+      <div class="content" id="c7p">
+        <p id="c7a">
+          V závislosti od právnych predpisov máš právo na prístup, opravu, vymazanie, obmedzenie spracúvania, prenosnosť údajov a namietať spracúvanie.
+          Ak je spracúvanie založené na súhlase, môžeš ho kedykoľvek odvolať.
+        </p>
+        <p id="c7b2">
+          Pre uplatnenie práv nás kontaktuj na <a href="mailto:support@ezapni.app">support@ezapni.app</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <header>
+        <h3 id="c8t">8. Deti</h3>
+        <span class="badge" id="c8b">Children</span>
+      </header>
+      <div class="content" id="c8p">
+        <p id="c8a">
+          Aplikácia nie je určená pre deti mladšie ako 13 rokov. Vedome nezhromažďujeme údaje detí.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <header>
+        <h3 id="c9t">9. Zmeny dokumentu</h3>
+        <span class="badge" id="c9b">Updates</span>
+      </header>
+      <div class="content" id="c9p">
+        <p id="c9a">
+          Tieto zásady môžeme občas aktualizovať. Aktuálna verzia je dostupná na tejto stránke.
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div><a href="./index.html">← eZapni — Legal</a></div>
+      <div class="small">© <span id="year"></span> eZapni</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Set a real date once you want (or keep auto).
+    const d = new Date();
+    const iso = d.toISOString().slice(0,10);
+    document.getElementById("lastUpdated").textContent = iso;
+
+    const strings = {
+      sk: {
+        pageTitle: "Zásady ochrany osobných údajov",
+        subtitle: "Aplikácia eZapni • Posledná aktualizácia: ",
+        heroTitle: "Zhrnutie",
+        heroDesc: "Rešpektujeme súkromie. Aplikácia eZapni spracúva len nevyhnutné technické údaje a (voliteľne) anonymizovanú analytiku na zlepšovanie funkcií.",
+        heroNote: "Ak nechceš analytiku, môžeš ju vypnúť v nastaveniach (ak je dostupné), prípadne používame iba agregované technické dáta.",
+        c1t:"1. Kto je prevádzkovateľ",
+        c1p:"Prevádzkovateľom osobných údajov v súvislosti s aplikáciou eZapni („Aplikácia“) je prevádzkovateľ uvedený v sekcii Kontakt na stránke eZapni — Legal.",
+        c1k1:"Kontakt",
+        c2t:"2. Aké údaje spracúvame",
+        c2s1:"a) Údaje, ktoré zadáš v aplikácii",
+        c2a:"Nastavenia spotrebičov (napr. spotreba v kWh, bežný čas zapnutia), výber trhu (SK/CZ) a podobné preferencie. Tieto údaje slúžia na výpočet odporúčaní a zobrazenie výsledkov.",
+        c2s2:"b) Technické a diagnostické údaje",
+        c2b2:"Informácie o zariadení a aplikácii (napr. verzia aplikácie, typ zariadenia, OS, jazyk, časové pásmo, anonymné diagnostické údaje o pádoch).",
+        c2s3:"c) Analytické udalosti (event tracking) — ak je zapnuté",
+        c2c:"Môžeme merať anonymné/aggregované udalosti (napr. otvorenie obrazovky, kliknutie na „Zobraziť plán“, pridanie spotrebiča) s cieľom zlepšovať aplikáciu. Nezhromažďujeme obsah tvojich textov ani citlivé osobné údaje na reklamné účely.",
+        c2s4:"d) Údaje o platbách",
+        c2d:"Ak odomkneš platenú verziu, platbu spracúva obchod (Google Play / App Store). K údajom o platobnej karte nemáme prístup. Môžeme spracúvať iba technické potvrdenia o nákupe (napr. identifikátor produktu, stav nákupu) na účely odomknutia funkcií.",
+        c3t:"3. Na aké účely a právne základy",
+        c3a:"Údaje spracúvame najmä na:",
+        c3list:[
+          "<strong>Poskytovanie funkcií aplikácie</strong> (výpočty a odporúčania) — plnenie zmluvy / poskytovanie služby.",
+          "<strong>Zlepšovanie stability a výkonu</strong> (diagnostika, pády) — oprávnený záujem.",
+          "<strong>Analytiku používania</strong> (ak je zapnutá) — oprávnený záujem alebo súhlas podľa nastavenia implementácie.",
+          "<strong>Správa nákupov</strong> (odomknutie Pro) — plnenie zmluvy."
+        ],
+        c4t:"4. Komu údaje poskytujeme",
+        c4a:"Údaje môžeme zdieľať iba v nevyhnutnom rozsahu s poskytovateľmi služieb, ktorí nám pomáhajú prevádzkovať aplikáciu, napríklad:",
+        c4list:[
+          "poskytovatelia analytiky a crash reportingu (ak sú používaní),",
+          "cloud/hosting infraštruktúra (ak aplikácia používa backend),",
+          "Google Play / Apple App Store pre spracovanie nákupov."
+        ],
+        c4b2:"Údaje nepredávame a nepoužívame na cielenú reklamu tretích strán.",
+        c5t:"5. Prenos do tretích krajín",
+        c5a:"Ak využívame poskytovateľov mimo EÚ/EHP, prenosy prebiehajú s primeranými zárukami (napr. štandardné zmluvné doložky).",
+        c6t:"6. Doba uchovávania",
+        c6a:"Údaje uchovávame len po dobu nevyhnutnú na účely uvedené vyššie. Nastavenia v aplikácii môžu byť uložené lokálne v zariadení. Diagnostické a analytické údaje (ak sú zapnuté) uchovávame typicky v agregovanej podobe a po obmedzenú dobu podľa nastavení poskytovateľa.",
+        c7t:"7. Tvoje práva",
+        c7a:"V závislosti od právnych predpisov máš právo na prístup, opravu, vymazanie, obmedzenie spracúvania, prenosnosť údajov a namietať spracúvanie. Ak je spracúvanie založené na súhlase, môžeš ho kedykoľvek odvolať.",
+        c7b2:"Pre uplatnenie práv nás kontaktuj na support@ezapni.app.",
+        c8t:"8. Deti",
+        c8a:"Aplikácia nie je určená pre deti mladšie ako 13 rokov. Vedome nezhromažďujeme údaje detí.",
+        c9t:"9. Zmeny dokumentu",
+        c9a:"Tieto zásady môžeme občas aktualizovať. Aktuálna verzia je dostupná na tejto stránke."
+      },
+      cs: {
+        pageTitle: "Zásady ochrany osobních údajů",
+        subtitle: "Aplikace eZapni • Poslední aktualizace: ",
+        heroTitle: "Shrnutí",
+        heroDesc: "Respektujeme soukromí. Aplikace eZapni zpracovává jen nezbytné technické údaje a (volitelně) anonymizovanou analytiku pro zlepšování funkcí.",
+        heroNote: "Pokud nechceš analytiku, můžeš ji vypnout v nastavení (pokud je k dispozici), případně používáme pouze agregovaná technická data.",
+        c1t:"1. Kdo je správce",
+        c1p:"Správcem osobních údajů v souvislosti s aplikací eZapni („Aplikace“) je provozovatel uvedený v sekci Kontakt na stránce eZapni — Legal.",
+        c1k1:"Kontakt",
+        c2t:"2. Jaké údaje zpracováváme",
+        c2s1:"a) Údaje, které zadáš v aplikaci",
+        c2a:"Nastavení spotřebičů (např. spotřeba v kWh, běžný čas zapnutí), volba trhu (SK/CZ) a podobné preference. Tyto údaje slouží k výpočtu doporučení a zobrazení výsledků.",
+        c2s2:"b) Technické a diagnostické údaje",
+        c2b2:"Informace o zařízení a aplikaci (např. verze aplikace, typ zařízení, OS, jazyk, časové pásmo, anonymní diagnostické údaje o pádech).",
+        c2s3:"c) Analytické události (event tracking) — pokud je zapnuto",
+        c2c:"Můžeme měřit anonymní/agregované události (např. otevření obrazovky, kliknutí na „Zobrazit plán“, přidání spotřebiče) za účelem zlepšování aplikace. Neshromažďujeme obsah tvých textů ani citlivé osobní údaje pro reklamní účely.",
+        c2s4:"d) Údaje o platbách",
+        c2d:"Pokud odemkneš placenou verzi, platbu zpracovává obchod (Google Play / App Store). K údajům o platební kartě nemáme přístup. Můžeme zpracovávat pouze technická potvrzení o nákupu (např. identifikátor produktu, stav nákupu) pro účely odemknutí funkcí.",
+        c3t:"3. Účely a právní základy",
+        c3a:"Údaje zpracováváme zejména pro:",
+        c3list:[
+          "<strong>Poskytování funkcí aplikace</strong> (výpočty a doporučení) — plnění smlouvy / poskytování služby.",
+          "<strong>Zlepšování stability a výkonu</strong> (diagnostika, pády) — oprávněný zájem.",
+          "<strong>Analytiku používání</strong> (pokud je zapnutá) — oprávněný zájem nebo souhlas podle implementace.",
+          "<strong>Správu nákupů</strong> (odemknutí Pro) — plnění smlouvy."
+        ],
+        c4t:"4. Komu údaje poskytujeme",
+        c4a:"Údaje můžeme sdílet jen v nezbytném rozsahu s poskytovateli služeb, kteří nám pomáhají provozovat aplikaci, například:",
+        c4list:[
+          "poskytovatelé analytiky a crash reportingu (pokud jsou používáni),",
+          "cloud/hosting infrastruktura (pokud aplikace používá backend),",
+          "Google Play / Apple App Store pro zpracování nákupů."
+        ],
+        c4b2:"Údaje neprodáváme a nepoužíváme pro cílenou reklamu třetích stran.",
+        c5t:"5. Předávání do třetích zemí",
+        c5a:"Pokud využíváme poskytovatele mimo EU/EHP, předávání probíhá s přiměřenými zárukami (např. standardní smluvní doložky).",
+        c6t:"6. Doba uchování",
+        c6a:"Údaje uchováváme jen po dobu nezbytnou pro uvedené účely. Nastavení v aplikaci může být uloženo lokálně v zařízení. Diagnostická a analytická data (pokud jsou zapnutá) uchováváme typicky v agregované podobě a po omezenou dobu dle nastavení poskytovatele.",
+        c7t:"7. Tvá práva",
+        c7a:"V závislosti na právních předpisech máš právo na přístup, opravu, výmaz, omezení zpracování, přenositelnost údajů a vznést námitku. Pokud je zpracování založeno na souhlasu, můžeš jej kdykoli odvolat.",
+        c7b2:"Pro uplatnění práv nás kontaktuj na support@ezapni.app.",
+        c8t:"8. Děti",
+        c8a:"Aplikace není určena pro děti mladší 13 let. Vědomě neshromažďujeme údaje dětí.",
+        c9t:"9. Změny dokumentu",
+        c9a:"Tyto zásady můžeme občas aktualizovat. Aktuální verze je dostupná na této stránce."
+      },
+      en: {
+        pageTitle: "Privacy Policy",
+        subtitle: "eZapni app • Last updated: ",
+        heroTitle: "Summary",
+        heroDesc: "We respect privacy. eZapni processes only necessary technical data and (optionally) anonymized analytics to improve the app.",
+        heroNote: "If you don’t want analytics, you can disable it in settings (if available). Otherwise we use aggregated technical data only.",
+        c1t:"1. Data controller",
+        c1p:"The data controller for the eZapni application (“App”) is the operator listed in the Contact section on the eZapni — Legal page.",
+        c1k1:"Contact",
+        c2t:"2. What data we process",
+        c2s1:"a) Data you enter in the app",
+        c2a:"Appliance settings (e.g., kWh consumption, typical start time), market selection (SK/CZ) and similar preferences. This data is used to compute recommendations and display results.",
+        c2s2:"b) Technical and diagnostic data",
+        c2b2:"Device and app info (e.g., app version, device type, OS, language, time zone, anonymized crash diagnostics).",
+        c2s3:"c) Analytics events (event tracking) — if enabled",
+        c2c:"We may measure anonymized/aggregated events (e.g., screen open, tapping “Show plan”, adding an appliance) to improve the app. We do not collect your text content or sensitive personal data for advertising.",
+        c2s4:"d) Payments data",
+        c2d:"If you unlock the paid version, the purchase is processed by the store (Google Play / App Store). We do not have access to your payment card details. We may process technical purchase confirmations (e.g., product ID, purchase status) to unlock features.",
+        c3t:"3. Purposes and legal bases",
+        c3a:"We process data mainly to:",
+        c3list:[
+          "<strong>Provide app features</strong> (calculations and recommendations) — performance of a contract / service provision.",
+          "<strong>Improve stability and performance</strong> (diagnostics, crashes) — legitimate interest.",
+          "<strong>Usage analytics</strong> (if enabled) — legitimate interest or consent depending on implementation.",
+          "<strong>Purchase management</strong> (unlocking Pro) — performance of a contract."
+        ],
+        c4t:"4. Sharing",
+        c4a:"We share data only as necessary with service providers that help us operate the app, such as:",
+        c4list:[
+          "analytics and crash reporting providers (if used),",
+          "cloud/hosting infrastructure (if the app uses a backend),",
+          "Google Play / Apple App Store for purchases."
+        ],
+        c4b2:"We do not sell data and we do not use it for third-party targeted advertising.",
+        c5t:"5. International transfers",
+        c5a:"If we use providers outside the EU/EEA, transfers are made with appropriate safeguards (e.g., Standard Contractual Clauses).",
+        c6t:"6. Retention",
+        c6a:"We keep data only as long as necessary for the purposes above. App settings may be stored locally on your device. Diagnostic and analytics data (if enabled) is typically stored in aggregated form and for a limited period depending on provider settings.",
+        c7t:"7. Your rights",
+        c7a:"Depending on applicable law, you may have rights to access, correct, delete, restrict processing, data portability, and to object. If processing is based on consent, you can withdraw it at any time.",
+        c7b2:"To exercise your rights, contact us at support@ezapni.app.",
+        c8t:"8. Children",
+        c8a:"The app is not intended for children under 13. We do not knowingly collect children’s data.",
+        c9t:"9. Updates",
+        c9a:"We may update this policy from time to time. The current version is available on this page."
+      }
+    };
+
+    function setLang(lang){
+      const s = strings[lang] || strings.sk;
+
+      document.getElementById("pageTitle").textContent = s.pageTitle;
+
+      // subtitle prefix only, keep date already rendered
+      const date = document.getElementById("lastUpdated").textContent;
+      document.getElementById("subtitle").innerHTML =
+        (s.subtitle || "") + '<span id="lastUpdated">' + date + "</span>";
+
+      document.getElementById("heroTitle").textContent = s.heroTitle;
+      document.getElementById("heroDesc").textContent = s.heroDesc;
+      document.getElementById("heroNote").textContent = s.heroNote;
+
+      document.getElementById("c1t").textContent = s.c1t;
+      document.getElementById("c1p").textContent = s.c1p;
+      document.getElementById("c1k1").textContent = s.c1k1;
+
+      document.getElementById("c2t").textContent = s.c2t;
+
+      document.getElementById("c2p").querySelectorAll("strong")[0].textContent = s.c2s1;
+      document.getElementById("c2p").querySelectorAll("span")[0].textContent = s.c2a;
+
+      document.getElementById("c2p").querySelectorAll("strong")[1].textContent = s.c2s2;
+      document.getElementById("c2p").querySelectorAll("span")[1].textContent = s.c2b2;
+
+      document.getElementById("c2p").querySelectorAll("strong")[2].textContent = s.c2s3;
+      document.getElementById("c2p").querySelectorAll("span")[2].textContent = s.c2c;
+
+      document.getElementById("c2p").querySelectorAll("strong")[3].textContent = s.c2s4;
+      document.getElementById("c2p").querySelectorAll("span")[3].textContent = s.c2d;
+
+      document.getElementById("c3t").textContent = s.c3t;
+      document.getElementById("c3p").querySelector("p").textContent = s.c3a;
+      const ul3 = document.getElementById("c3list");
+      ul3.innerHTML = "";
+      s.c3list.forEach(item => {
+        const li = document.createElement("li");
+        li.innerHTML = item;
+        ul3.appendChild(li);
+      });
+
+      document.getElementById("c4t").textContent = s.c4t;
+      document.getElementById("c4p").querySelector("p").textContent = s.c4a;
+      const ul4 = document.getElementById("c4list");
+      ul4.innerHTML = "";
+      s.c4list.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        ul4.appendChild(li);
+      });
+      document.getElementById("c4p").querySelectorAll("p")[1].textContent = s.c4b2;
+
+      document.getElementById("c5t").textContent = s.c5t;
+      document.getElementById("c5p").querySelector("p").textContent = s.c5a;
+
+      document.getElementById("c6t").textContent = s.c6t;
+      document.getElementById("c6p").querySelector("p").textContent = s.c6a;
+
+      document.getElementById("c7t").textContent = s.c7t;
+      document.getElementById("c7p").querySelectorAll("p")[0].textContent = s.c7a;
+      document.getElementById("c7p").querySelectorAll("p")[1].textContent = s.c7b2;
+
+      document.getElementById("c8t").textContent = s.c8t;
+      document.getElementById("c8p").querySelector("p").textContent = s.c8a;
+
+      document.getElementById("c9t").textContent = s.c9t;
+      document.getElementById("c9p").querySelector("p").textContent = s.c9a;
+
+      document.querySelectorAll(".pill").forEach(b=>{
+        b.setAttribute("aria-current", b.dataset.lang === lang ? "true" : "false");
+      });
+
+      document.documentElement.lang = lang === "cs" ? "cs" : (lang === "en" ? "en" : "sk");
+    }
+
+    document.querySelectorAll(".pill").forEach(btn=>{
+      btn.addEventListener("click", ()=> setLang(btn.dataset.lang));
+    });
+  </script>
+</body>
+</html>
